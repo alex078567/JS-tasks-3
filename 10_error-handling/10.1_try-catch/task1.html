@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Finally или просто код?</title>
+	</head>
+	<body>
+		<script>
+			'use strict';
+
+			/**
+			 * Главное преимущество finally, заключается в том, что код в нем
+			 * будет выполнен в любом случае.
+			 * Пример
+			 */
+
+			try {
+				alert('ошибка в коде!');
+				throw new Error('неизвестная ошибка');
+			} catch (error) {
+				alert(`${error.name}: ${error.message}`);
+				throw error;
+			} finally {
+				alert('несмотря на ошибку выполняется!');
+			}
+			alert('а здесь не выполняется!');
+		</script>
+	</body>
+</html>

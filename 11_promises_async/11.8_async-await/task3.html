@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Вызовите async–функцию из "обычной"</title>
+	</head>
+	<body>
+		<script>
+			'use strict';
+
+			async function wait() {
+				await new Promise((resolve) => setTimeout(resolve, 1000));
+
+				return 10;
+			}
+
+			function f() {
+				wait().then(alert);
+			}
+			f();
+		</script>
+	</body>
+</html>

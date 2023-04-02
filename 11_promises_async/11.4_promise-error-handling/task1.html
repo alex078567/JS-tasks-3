@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ошибка в setTimeout</title>
+	</head>
+	<body>
+		<script>
+			'use strict';
+			/**
+			 * Что вы думаете? Выполнится ли .catch? Поясните свой ответ.
+			 */
+			new Promise(function (resolve, reject) {
+				setTimeout(() => {
+					throw new Error('Whoops!');
+				}, 1000);
+			}).catch(alert);
+			/**
+			 * Ответ: нет.
+			 * Так как ошибка генерируется не по ходу выполнения кода,
+			 * промис не может ее обработать
+			 */
+		</script>
+	</body>
+</html>

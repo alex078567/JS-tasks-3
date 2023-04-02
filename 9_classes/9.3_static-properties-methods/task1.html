@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Класс расширяет объект?</title>
+	</head>
+	<body>
+		<script>
+			'use strict';
+
+			class Rabbit extends Object {
+				constructor(name) {
+					super(); //вызываем конструктор родителя
+					this.name = name;
+				}
+			}
+
+			let rabbit = new Rabbit('Кроль');
+
+			alert(rabbit.hasOwnProperty('name')); // Ошибка
+		</script>
+	</body>
+</html>

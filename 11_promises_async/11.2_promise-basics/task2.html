@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Задержка на промисах</title>
+	</head>
+	<body>
+		<script>
+			'use strict';
+
+			delay(3000).then(() => alert('Прошло 3 секунды'));
+
+			function delay(ms) {
+				return new Promise((resolve) => setTimeout(resolve, ms));
+			}
+		</script>
+	</body>
+</html>
